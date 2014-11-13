@@ -34,7 +34,7 @@
  * @param quaternion a [w, x, y, z] ordered quaternion (null-rotation being 1 0 0 0)
  * @param dcm a 3x3 rotation matrix
  */
-void mavlink_quaternion_to_dcm(const float quaternion[4], float dcm[3][3])
+MAVLINK_HELPER void mavlink_quaternion_to_dcm(const float quaternion[4], float dcm[3][3])
 {
     double a = quaternion[0];
     double b = quaternion[1];
@@ -64,7 +64,7 @@ void mavlink_quaternion_to_dcm(const float quaternion[4], float dcm[3][3])
  * @param pitch the pitch angle in radians
  * @param yaw the yaw angle in radians
  */
-void mavlink_dcm_to_euler(const float dcm[3][3], float* roll, float* pitch, float* yaw)
+MAVLINK_HELPER void mavlink_dcm_to_euler(const float dcm[3][3], float* roll, float* pitch, float* yaw)
 {
     float phi, theta, psi;
     theta = asin(-dcm[2][0]);
@@ -98,7 +98,7 @@ void mavlink_dcm_to_euler(const float dcm[3][3], float* roll, float* pitch, floa
  * @param pitch the pitch angle in radians
  * @param yaw the yaw angle in radians
  */
-void mavlink_quaternion_to_euler(const float quaternion[4], float* roll, float* pitch, float* yaw)
+MAVLINK_HELPER void mavlink_quaternion_to_euler(const float quaternion[4], float* roll, float* pitch, float* yaw)
 {
     float dcm[3][3];
     mavlink_quaternion_to_dcm(quaternion, dcm);
@@ -114,7 +114,7 @@ void mavlink_quaternion_to_euler(const float quaternion[4], float* roll, float* 
  * @param yaw the yaw angle in radians
  * @param quaternion a [w, x, y, z] ordered quaternion (null-rotation being 1 0 0 0)
  */
-void mavlink_euler_to_quaternion(float roll, float pitch, float yaw, float quaternion[4])
+MAVLINK_HELPER void mavlink_euler_to_quaternion(float roll, float pitch, float yaw, float quaternion[4])
 {
     double cosPhi_2 = cos((double)roll / 2.0);
     double sinPhi_2 = sin((double)roll / 2.0);
@@ -139,7 +139,7 @@ void mavlink_euler_to_quaternion(float roll, float pitch, float yaw, float quate
  * @param dcm a 3x3 rotation matrix
  * @param quaternion a [w, x, y, z] ordered quaternion (null-rotation being 1 0 0 0)
  */
-void mavlink_dcm_to_quaternion(const float dcm[3][3], float quaternion[4])
+MAVLINK_HELPER void mavlink_dcm_to_quaternion(const float dcm[3][3], float quaternion[4])
 {
     quaternion[0] = (0.5 * sqrt(1.0 +
             (double)(dcm[0][0] + dcm[1][1] + dcm[2][2])));
@@ -160,7 +160,7 @@ void mavlink_dcm_to_quaternion(const float dcm[3][3], float quaternion[4])
  * @param yaw the yaw angle in radians
  * @param dcm a 3x3 rotation matrix
  */
-void mavlink_euler_to_dcm(float roll, float pitch, float yaw, float dcm[3][3])
+MAVLINK_HELPER void mavlink_euler_to_dcm(float roll, float pitch, float yaw, float dcm[3][3])
 {
     double cosPhi = cos(roll);
     double sinPhi = sin(roll);
