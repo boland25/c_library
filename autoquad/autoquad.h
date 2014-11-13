@@ -129,7 +129,7 @@ typedef enum MAV_CMD
 } MAV_CMD;
 #endif
 
-#include "../common/common.h"
+#include "common.h"
 
 // MAVLINK VERSION
 

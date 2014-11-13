@@ -21,7 +21,7 @@ static void mavlink_test_all(uint8_t system_id, uint8_t component_id, mavlink_me
 }
 #endif
 
-#include "../common/testsuite.h"
+#include "testsuite.h"common/testsuite.h"
 
 
 static void mavlink_test_flexifunction_set(uint8_t system_id, uint8_t component_id, mavlink_message_t *last_msg)

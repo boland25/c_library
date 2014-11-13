@@ -35,7 +35,7 @@ extern "C" {
 
 
 
-#include "../common/common.h"
+#include "common.h"
 
 // MAVLINK VERSION
 

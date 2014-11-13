@@ -147,7 +147,7 @@ typedef enum CONTROL_SURFACE_FLAG
 } CONTROL_SURFACE_FLAG;
 #endif
 
-#include "../common/common.h"
+#include "common.h"
 
 // MAVLINK VERSION
 

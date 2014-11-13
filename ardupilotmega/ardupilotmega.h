@@ -206,7 +206,7 @@ typedef enum CAMERA_FEEDBACK_FLAGS
 } CAMERA_FEEDBACK_FLAGS;
 #endif
 
-#include "../common/common.h"
+#include "common.h"
 
 // MAVLINK VERSION
 

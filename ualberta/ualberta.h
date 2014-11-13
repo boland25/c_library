@@ -73,7 +73,7 @@ typedef enum UALBERTA_PILOT_MODE
 } UALBERTA_PILOT_MODE;
 #endif
 
-#include "../common/common.h"
+#include "common.h"
 
 // MAVLINK VERSION
 
